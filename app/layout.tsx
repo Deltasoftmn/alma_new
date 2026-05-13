@@ -11,8 +11,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Khimi Consulting",
-  description: "Reliable Chemical Solutions for Mining & Industry in Mongolia",
+  title: "Алма Кем Трейд ХХК",
+  description: "Алма Кем Трейд ХХК нь уул уурхай, баяжуулалт, зам, барилга, аж үйлдвэрийн салбарт зориулсан  химийн бодис, урвалж болон бусад төрлийн бүтээгдэхүүнүүдийг ханган нийлүүлэгч компани юм.",
 };
 
 export default function RootLayout({
