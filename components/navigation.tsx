@@ -58,9 +58,9 @@ export function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-4 left-0 right-0 z-50 w-full ">
+    <nav className="fixed left-0 right-0 z-50 w-full ">
       <div className="max-w-full mx-auto">
-        <div className="relative flex items-center justify-between -top-5 h-25 px-20 bg-[url('/header_background.png')] bg-cover bg-center bg-no-repeat rounded-[2rem] shadow-inner">
+        <div className="relative flex items-center justify-between -mt-5 h-25 px-16 bg-[url('/header_background.png')] bg-cover bg-center bg-no-repeat rounded-[2rem] shadow-inner">
           {/* Logo and Tagline Area */}
           <div className="flex items-center gap-6 z-10">
             <Link href="/" className="z-10 pl-6">
@@ -88,7 +88,7 @@ export function Navigation() {
                         className={cn(
                           "px-4 py-1.5 rounded-full text-sm font-medium transition-all flex items-center gap-1 whitespace-nowrap",
                           isActive
-                            ? "bg-[#2ecc71] text-white shadow-md border border-[#27ae60]"
+                            ? "bg-[#00d4ff]/10 text-[#00d4ff] shadow-md border border-[#00d4ff]/50"
                             : "text-zinc-200 hover:text-white border border-transparent hover:border-white/20"
                         )}
                       >
@@ -104,7 +104,7 @@ export function Navigation() {
                             <Link
                               key={sub.name}
                               href={sub.href}
-                              className="block px-4 py-2.5 text-sm text-zinc-300 hover:text-white hover:bg-emerald-600/20 hover:border-emerald-500/30 border border-transparent rounded-xl transition-all mb-1 last:mb-0"
+                              className="block px-4 py-2.5 text-sm text-zinc-300 hover:text-[#00d4ff] hover:bg-[#00d4ff]/10 hover:border-[#00d4ff]/30 border border-transparent rounded-xl transition-all mb-1 last:mb-0"
                             >
                               {sub.name}
                             </Link>
@@ -122,7 +122,7 @@ export function Navigation() {
                     className={cn(
                       "px-4 py-1.5 rounded-full text-sm font-medium transition-all whitespace-nowrap",
                       isActive
-                        ? "bg-[#2ecc71] text-white shadow-md border border-[#27ae60]"
+                        ? "bg-[#00d4ff]/10 text-[#00d4ff] shadow-md border border-[#00d4ff]/50"
                         : "text-zinc-200 hover:text-white border border-transparent hover:border-white/20"
                     )}
                   >
@@ -133,8 +133,8 @@ export function Navigation() {
             </div>
             
             {/* Language Switcher */}
-            <button className="ml-2 px-3 py-1.5 rounded-full bg-[#1b5e20] text-white font-medium hover:bg-[#2e7d32] transition-colors flex items-center gap-1.5 shadow-md border border-[#4caf50]">
-              <Globe className="w-4 h-4 text-[#81c784]" />
+            <button className="ml-2 px-3 py-1.5 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] font-medium hover:bg-[#00d4ff]/20 transition-colors flex items-center gap-1.5 shadow-md border border-[#00d4ff]/30">
+              <Globe className="w-4 h-4 text-[#00d4ff]" />
               <span className="text-sm">МН/EN</span>
             </button>
           </div>
@@ -160,16 +160,16 @@ export function Navigation() {
                 <div key={item.name} className="border-b border-white/5 last:border-none pb-2 last:pb-0">
                   {item.submenu ? (
                     <div>
-                      <span className="block font-semibold text-[#2ecc71] px-4 py-1.5 text-sm">
+                      <span className="block font-semibold text-[#00d4ff] px-4 py-1.5 text-sm">
                         {item.name}
                       </span>
-                      <div className="flex flex-col gap-1 pl-4 mt-1 border-l-2 border-emerald-500/20 ml-4 mb-2">
+                      <div className="flex flex-col gap-1 pl-4 mt-1 border-l-2 border-[#00d4ff]/20 ml-4 mb-2">
                         {item.submenu.map((sub) => (
                           <Link
                             key={sub.name}
                             href={sub.href}
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block px-4 py-2 text-sm text-zinc-400 hover:text-white hover:bg-emerald-500/10 rounded-lg transition-all"
+                            className="block px-4 py-2 text-sm text-zinc-400 hover:text-[#00d4ff] hover:bg-[#00d4ff]/10 rounded-lg transition-all"
                           >
                             {sub.name}
                           </Link>
@@ -183,7 +183,7 @@ export function Navigation() {
                       className={cn(
                         "block px-4 py-2.5 font-medium rounded-xl text-sm transition-all",
                         pathname === item.href
-                          ? "bg-[#2ecc71] text-white"
+                          ? "bg-[#00d4ff]/20 text-[#00d4ff]"
                           : "text-zinc-300 hover:text-white hover:bg-white/5"
                       )}
                     >
@@ -195,8 +195,8 @@ export function Navigation() {
               
               {/* Mobile Language Switcher */}
               <div className="pt-3 border-t border-white/10 mt-2">
-                <button className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-2xl bg-[#1b5e20] text-white font-semibold shadow-lg">
-                  <Globe className="w-4 h-4 text-[#81c784]" />
+                <button className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-2xl bg-[#00d4ff]/10 text-[#00d4ff] font-semibold shadow-lg border border-[#00d4ff]/30">
+                  <Globe className="w-4 h-4 text-[#00d4ff]" />
                   <span>МН/EN</span>
                 </button>
               </div>

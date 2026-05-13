@@ -27,7 +27,7 @@ export function Footer() {
         {/* Top Centered Text */}
         <div className="text-right max-w-3xl mx-auto mb-20">
           <p className="text-xl md:text-[30px] font-medium leading-relaxed">
-            Бид уул уурхайн үйлдвэрлэлийн тасралтгүй, аюулгүй ажиллагааг хангах зорилгоор чанартай бүтээгдэхүүн, найдвартай түншлэлээр үнэ цэнийг бүтээнэ.
+            Монголын уул уурхайн хөгжилд чанартай, найдвартай бүтээгдэхүүн, инновацын шийдлээр хувь нэмэр оруулан, салбарын тэргүүлэх нийлүүлэгч байна.
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export function Footer() {
           {/* Copyright */}
           <div className="lg:col-span-3 flex lg:items-end lg:justify-end h-full">
             <p className="text-xs text-slate-200 lg:mb-2">
-              © 2026 Хими Консалтинг ХХК. Бүх эрх хуулиар хамгаалагдсан.
+              © 2026 Алма Кем Трейд ХХК. Бүх эрх хуулиар хамгаалагдсан.
             </p>
           </div>
         </div>
