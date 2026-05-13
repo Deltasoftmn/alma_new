@@ -60,7 +60,7 @@ export function Navigation() {
   return (
     <nav className="fixed left-0 right-0 z-50 w-full ">
       <div className="max-w-full mx-auto">
-        <div className="relative flex items-center justify-between -mt-4 h-25 px-16 bg-[url('/header_background.png')] bg-cover bg-center bg-no-repeat rounded-[2rem] shadow-inner">
+        <div className="relative flex items-center justify-between -mt-4 h-25 px-18 bg-[url('/header_background.png')] bg-cover bg-center bg-no-repeat rounded-[2rem] shadow-inner">
           {/* Logo and Tagline Area */}
           <div className="flex items-center gap-6 z-10">
             <Link href="/" className="z-10 pl-6">
