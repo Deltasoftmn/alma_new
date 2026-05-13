@@ -26,23 +26,23 @@ export function Navigation() {
       href: "/products",
       submenu: [
         { name: "Уул уурхайн флотацийн реагентууд", href: "/products/1" },
-        { name: "Уул уурхайн химийн бодис", href: "/products/2" },
-        { name: "Тоног төхөөрөмж", href: "/products/3" },
-        { name: "Аюулгүй ажиллагааны хэрэгсэл", href: "/products/4" }
+        { name: "Замын нэмэлт бүтээгдэхүүн ", href: "/products/2" },
+        { name: "Барилгын материал, түүхий эд", href: "/products/3" }
       ]
     },
     { name: "Харилцагчид", 
       href: "/clients" ,
       submenu: [
         { name: "Уул уурхайн компаниуд", href: "/clients/1" },
-        { name: "Боловсруулах үйлдвэрүүд", href: "/clients/2" }
+        { name: "Боловсруулах үйлдвэрүүд", href: "/clients/2" },
+        { name: "Зам , барилгын компани", href: "/clients/2" }
       ]
     },
     { name: "Мэдээ, нийтлэл", 
       href: "/news",
       submenu: [
-        { name: "Аж үйлдвэрийн салбарын мэдээлэл", href: "/news/1" },
-        { name: "Байгаль орчны болон аюулгүй ажиллагааны мэдээ", href: "/news/2" },
+        { name: "Олон улсын зах зээлийн чиг хандлага", href: "/news/1" },
+        { name: "Байгаль орчны болон аюулгүй ажиллагааны мэдээлэл", href: "/news/2" },
         { name: "Компанийн үйл ажиллагаа", href: "/news/3" },
         
       ]
@@ -70,7 +70,7 @@ export function Navigation() {
             <div className="hidden md:block pl-12 z-10">
               <p className="text-white/90 text-sm font-medium leading-tight max-w-[300px]">
                 Монголын уул уурхай, аж үйлдвэрийн салбар дахь 
-                найдвартай химийн шийдлүүд
+                найдвартай ханган нийлүүлэгч 
               </p>
             </div>
           </div>
