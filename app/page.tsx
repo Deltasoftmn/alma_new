@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import { ArrowRight, Target, Award, Users, Globe, Shield, ChevronLeft, ChevronRight } from "lucide-react";
@@ -10,6 +10,18 @@ import { AnimatedCounter } from "@/components/animated-counter";
 
 
 export default function Home() {
+  // State for image slider
+  const slides = ["/hero-bg2.png", "/hero-bg2.png", "/hero-bg2.png"];
+  const [current, setCurrent] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const prevSlide = () => {
+    setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    setIsAnimating(true);
+  };
+  const nextSlide = () => {
+    setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    setIsAnimating(true);
+  };
   // Swipe-in animation effect
   useEffect(() => {
     // Add swipe-in class to all sections
@@ -30,27 +42,45 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  // Reset animation flag after each slide change
+  useEffect(() => {
+    if (isAnimating) {
+      const timeout = setTimeout(() => setIsAnimating(false), 1000);
+      return () => clearTimeout(timeout);
+    }
+  }, [current, isAnimating]);
 
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center pt-16">
         {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/hero-bg.png"
-            alt="Industrial factory with silver pipes"
-            fill
-            className="object-cover"
-            priority
-          />
-          {/* Custom gradient overlay similar to mockup */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-transparent" />
-        </div>
+        <div className="absolute inset-0 z-0 swipe-in zoom-in">
+  {/* Image Slider */}
+  <div className="relative w-full h-full">
+    {/* Slider Images */}
+    <Image
+      src={slides[current]}
+      alt="Industrial factory with silver pipes"
+      fill
+      key={current}
+      className={`object-cover transition-opacity duration-1000 ease-in-out ${isAnimating ? "animate-zoom-in" : ""}`}
+    />
+    {/* Navigation Buttons */}
+    <button onClick={prevSlide} className="absolute left-4 top-1/2 -translate-y-1/2 z-20 text-white bg-black/30 rounded-full p-2 hover:bg-black/50">
+      <ChevronLeft className="w-6 h-6" />
+    </button>
+    <button onClick={nextSlide} className="absolute right-4 top-1/2 -translate-y-1/2 z-20 text-white bg-black/30 rounded-full p-2 hover:bg-black/50">
+      <ChevronRight className="w-6 h-6" />
+    </button>
+  </div>
+  {/* Custom gradient overlay similar to mockup */}
+  <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-transparent pointer-events-none" />
+</div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               Монголын уул уурхай, үйлдвэрлэлийн найдвартай ханган нийлүүлэгч
             </h1>
             
@@ -336,6 +366,15 @@ export default function Home() {
           .swipe-in.visible {
             opacity: 1;
             transform: translateX(0);
+          }
+          .zoom-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 2s ease-out, transform 2s ease-out;
+          }
+          .zoom-in.visible {
+            opacity: 1;
+            transform: scale(1);
           }
         `}</style>
     </div>
